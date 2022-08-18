@@ -71,12 +71,24 @@ Personnel.prototype.ratings = function (workingHours) {
 };
 // ======================== 4. Các hàm VALIDATE giá trị đầu vào =============================
 
+let error = document.querySelectorAll('.showError')
+let inputGroup = document.querySelectorAll('.input-group')
+
 // validate giá trị Acount
 function validateAccount(value) {
-    if (value == "" || value.length > 6) {
+    if ((value.length >= 4) && (value.length <= 6)) {
+        inputGroup[1].classList.add('mb-3')
+        error[0].innerHTML = '';
+        return true;
+    }
+    else if (value == "") {
+        inputGroup[1].classList.remove('mb-3');
+        error[0].innerHTML = 'Tài khoản không được bỏ trống';
         return false;
     } else {
-        return true;
+        inputGroup[1].classList.remove('mb-3');
+        error[0].innerHTML = 'Tài khoản tối đa 4 - 6 ký số';
+        return false;
     }
 };
 // Kiểm tra dữ liệu Acount
@@ -90,9 +102,17 @@ inputValue[1].onblur = () => {
 // validate giá trị Name
 function validateName(value) {
     let validate = new RegExp("^[A-Za-z]+$");
-    if (validate.test(value) && value != "") {
+    if (validate.test(value)) {
+        inputGroup[2].classList.add('mb-3')
+        error[1].innerHTML = '';
         return true;
+    } else if (value === '') {
+        inputGroup[2].classList.remove('mb-3');
+        error[1].innerHTML = 'Tên nhân viên không được bỏ trống';
+        return false;
     } else {
+        inputGroup[2].classList.remove('mb-3');
+        error[1].innerHTML = 'Tên nhân viên phải là chữ';
         return false;
     }
 };
@@ -108,8 +128,16 @@ inputValue[2].onblur = () => {
 function validateEmail(value) {
     let validate = /^[a-zA-Z0-9_]+@[a-zA-Z0-9_]+(.[a-zA-Z]{2,})+$/;
     if (validate.test(value) && value != "") {
+        inputGroup[3].classList.add('mb-3')
+        error[2].innerHTML = '';
         return true;
+    } else if (value === '') {
+        inputGroup[3].classList.remove('mb-3');
+        error[2].innerHTML = 'Email không được bỏ trống';
+        return false;
     } else {
+        inputGroup[3].classList.remove('mb-3');
+        error[2].innerHTML = ' Email không đúng định dạng';
         return false;
     }
 };
@@ -125,11 +153,17 @@ inputValue[3].onblur = () => {
 function validatePassword(value) {
     let validate =
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$/;
-    if (validate.test(value) && value != "") {
-        inputValue[4].style.border = "1px solid blue";
+    if (validate.test(value)) {
+        inputGroup[4].classList.add('mb-3')
+        error[3].innerHTML = '';
         return true;
+    } else if (value === '') {
+        inputGroup[4].classList.remove('mb-3');
+        error[3].innerHTML = 'Mật khẩu không được bỏ trống';
+        return false;
     } else {
-        inputValue[4].style.border = "1px solid red";
+        inputGroup[4].classList.remove('mb-3');
+        error[3].innerHTML = 'Mật Khẩu từ 6-10 ký tự (chứa ít nhất 1 ký tự số, 1 ký tự in hoa, 1 ký tự đặc biệt)';
         return false;
     }
 };
@@ -145,11 +179,17 @@ inputValue[4].onblur = () => {
 function validateWorkday(value) {
     let validate =
         /^(?:\d{4}\-(?:(?:(?:(?:0[13578]|1[02])\-(?:0[1-9]|[1-2][0-9]|3[01]))|(?:(?:0[469]|11)\-(?:0[1-9]|[1-2][0-9]|30))|(?:02\-(?:0[1-9]|1[0-9]|2[0-8]))))|(?:(?:\d{2}(?:0[48]|[2468][048]|[13579][26]))|(?:(?:[02468][048])|[13579][26])00)\-02\-29)$/;
-    if (validate.test(value) && value != "") {
-        inputValue[5].style.border = "1px solid blue";
+    if (validate.test(value)) {
+        inputGroup[5].classList.add('mb-3')
+        error[4].innerHTML = '';
         return true;
+    } else if (value === '') {
+        inputGroup[5].classList.remove('mb-3');
+        error[4].innerHTML = 'Ngày làm không được để trống';
+        return false;
     } else {
-        inputValue[5].style.border = "1px solid red";
+        inputGroup[5].classList.remove('mb-3');
+        error[4].innerHTML = ' Ngày làm theo định dạng yyyy/mm/dd';
         return false;
     }
 };
@@ -163,11 +203,17 @@ inputValue[5].onblur = () => {
 };
 // validate giá trị BasicSalary
 function validateBasicSalary(value) {
-    if (value > 1000000 && value <= 20000000 && value != "") {
-        inputValue[6].style.border = "1px solid blue";
+    if (value >= 1000000 && value <= 20000000) {
+        inputGroup[6].classList.add('mb-3')
+        error[5].innerHTML = '';
         return true;
+    } else if (value === '') {
+        inputGroup[6].classList.remove('mb-3');
+        error[5].innerHTML = 'Lương cơ bản không được để trống';
+        return false;
     } else {
-        inputValue[6].style.border = "1px solid red";
+        inputGroup[6].classList.remove('mb-3');
+        error[5].innerHTML = 'Lương cơ bản từ 1.000.000 - 20.000.000';
         return false;
     }
 };
@@ -182,10 +228,16 @@ inputValue[6].onblur = () => {
 // validate giá trị WorkingHours
 function validateWorkingHours(value) {
     if (80 <= value && value <= 200) {
-        inputValue[7].style.border = "1px solid blue";
+        inputGroup[8].classList.add('mb-3')
+        error[7].innerHTML = '';
         return true;
+    } else if (value === '') {
+        inputGroup[8].classList.remove('mb-3');
+        error[7].innerHTML = 'Số giờ làm không được để trống';
+        return false;
     } else {
-        inputValue[7].style.border = "1px solid red";
+        inputGroup[8].classList.remove('mb-3');
+        error[7].innerHTML = 'Số giờ làm trong tháng phải từ 80 - 200 giờ';
         return false;
     }
 };

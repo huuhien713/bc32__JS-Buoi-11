@@ -122,61 +122,83 @@
             </div>
             <div class="Modal__content">
                 <form>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    <div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control d-block" placeholder="Tài khoản" required>
                         </div>
-                        <input type="text" class="form-control" placeholder="Tài khoản" required>
+                        <span class ="showError"></span>
                     </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-address-book"></i></i></span>
+                    <div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-address-book"></i></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Họ và Tên">
                         </div>
-                        <input type="text" class="form-control" placeholder="Họ và Tên">
+                        <span class ="showError"></span>
                     </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                    <div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                            </div>
+                            <input type="email" class="form-control" placeholder="YourEmail@gmail.com">
                         </div>
-                        <input type="email" class="form-control" placeholder="YourEmail@gmail.com">
+                        <span class ="showError"></span>
                     </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-key"></i></i></span>
+                    <div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-key"></i></i></span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="Mật Khẩu">
                         </div>
-                        <input type="text" class="form-control" placeholder="Mật Khẩu">
+                        <span class ="showError"></span>
                     </div>
-
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                    <div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                            </div>
+                            <input id="selector" type="text" class="form-control" placeholder="2022-07-31">
+                            <img class="ui-datepicker-trigger ml-2" src="./img/calendar-icon.png" alt="Select date"
+                                title="Select date">
                         </div>
-                        <input id="selector" type="text" class="form-control" placeholder="2022-07-31">
-                        <img class="ui-datepicker-trigger ml-2" src="./img/calendar-icon.png" alt="Select date"
-                            title="Select date">
+                        <span class ="showError"></span>
                     </div>
-
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-money" aria-hidden="true"></i></span>
+                    <div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-money" aria-hidden="true"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Lương cơ bản">
                         </div>
-                        <input type="text" class="form-control" placeholder="Lương cơ bản">
+                        <span class ="showError"></span>
                     </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-briefcase"></i></span>
+                    <div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-briefcase"></i></span>
+                            </div>
+                            <select id="selectValue" class="form-control">
+                                <option value="Nhân viên">Nhân viên</option>
+                                <option value="Trưởng Phòng">Trưởng Phòng</option>
+                                <option value="Sếp">Sếp</option>
+                            </select>
                         </div>
-                        <select id="selectValue" class="form-control">
-                            <option value="Nhân viên">Nhân viên</option>
-                            <option value="Trưởng Phòng">Trưởng Phòng</option>
-                            <option value="Sếp">Sếp</option>
-                        </select>
+                        <span class ="showError"></span>
                     </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                    <div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Số giờ làm">
                         </div>
-                        <input type="text" class="form-control" placeholder="Số giờ làm">
+                        <span class ="showError"></span>
                     </div>
                 </form>
             </div>
