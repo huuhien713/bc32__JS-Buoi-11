@@ -1,86 +1,193 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>BTN_23</title>
+    <title>BTN_21</title>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!-- FONTAWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <!-- datePicker CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
-    <header class="header">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="#">
-                    <img src="./img/crest.png" alt="">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Course</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Shop</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Elements</a>
-                        </li>
-                    </ul>
-                    <div class="header__contact">
-                        <div class="header__phone">
-                            <a href="#">
-                                <i class="fa-solid fa-phone"></i>
-                                <span class="btButtonWidgetText">(+1) 555 234-8765</span>
-                            </a>
-                        </div>
-                        <div class="header__social">
-                            <a href="#">
-                                <i class="fa-brands fa-twitter"></i>
-                                <i class="fa-brands fa-facebook-f"></i>
-                                <i class="fa-brands fa-youtube"></i>
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
+    <div class="wrapper">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h3>Bootstrap Sidebar</h3>
+                <strong>BS</strong>
+            </div>
+            <ul>
+                <li class="active">
+                    <a href="#"><i class="fa fa-home"></i> home </a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-briefcase"></i> about </a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-files-o"></i> pages </a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-link"></i> portfolio </a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-paperclip"></i> FAQ </a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-paper-plane"></i> contact </a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <button class="btn">Download source</button>
+                <button class="btn">Back to artical</button>
+            </div>
+        </nav>
+        <div class="content">
+            <div class="content_header">
+                <div class="content_header-btn">
+                    <button id="btnToggle" class="btn btn-info">
+                        <i class="fa fa-align-left"></i>
+                        <span>Toggle sidebar</span>
+                    </button>
                 </div>
-            </nav>
+            </div>
+            <div class="content_main">
+                <div class="container-fluid">
+                    <form class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h3>Danh sách nhân viên</h3>
+                            <button id="btnThemNv" class="btn btn-primary" type="button">
+                                <i class="fa fa-plus-square" aria-hidden="true"></i> Thêm nhân viên
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="input-group mb-3">
+                                <input id="blur" type="text" class="form-control" placeholder="Loại nhân viên"
+                                    aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button id="btnSearch" class="btn btn-outline-secondary" type="button"><i
+                                            class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                            <!-- <div class="form-group">
+                                <label class="mb-2" for="loaiNhanVien">Loại Nhân Viên:</label>
+                                <select id="loaiNhanVien" class="form-control w-25">
+                                    <option value="khá">Khá</option>
+                                    <option value="giỏi">Giỏi</option>
+                                    <option value="xuất sắc">Xuất Sắc</option>
+                                </select>
+                            </div> -->
+                            <div>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <span>Tài khoản</span> 
+                                                <!-- <i class="fa fa-arrow-up" id="SapXepTang"></i>
+                                                <i class="fa fa-arrow-down" id="SapXepGiam"></i> -->
+                                            </th>
+                                            <th>Họ và tên</th>
+                                            <th>Email</th>
+                                            <th>Ngày làm</th>
+                                            <th>Chức vụ</th>
+                                            <th>Tổng lương</th>
+                                            <th>Xếp loại</th>
+                                            <th><em class="fa fa-cog"></em></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="listNhanVien">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <br>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-    </header>
-    <section class="about">
+    </div>
+    <div class="Modal">
+        <div class="Modal__main">
+            <div class="Modal__title">
+                <h2>Log In</h2>
+            </div>
+            <div class="Modal__content">
+                <form>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Tài khoản" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-address-book"></i></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Họ và Tên">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                        </div>
+                        <input type="email" class="form-control" placeholder="YourEmail@gmail.com">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-key"></i></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Mật Khẩu">
+                    </div>
 
-    </section>
-    <section class="team">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                        </div>
+                        <input id="selector" type="text" class="form-control" placeholder="2022-07-31">
+                        <img class="ui-datepicker-trigger ml-2" src="./img/calendar-icon.png" alt="Select date"
+                            title="Select date">
+                    </div>
 
-    </section>
-    <section class="form">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-money" aria-hidden="true"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Lương cơ bản">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-briefcase"></i></span>
+                        </div>
+                        <select id="selectValue" class="form-control">
+                            <option value="Nhân viên">Nhân viên</option>
+                            <option value="Trưởng Phòng">Trưởng Phòng</option>
+                            <option value="Sếp">Sếp</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Số giờ làm">
+                    </div>
+                </form>
+            </div>
+            <div class="Modal__button d-flex justify-content-end">
+                <button id="btnAdd" class="btn btn-success">Thêm người dùng</button>
+                <button id="btnUpdate" class="btn btn-success">Cập nhật</button>
+                <button class="btn btn-danger">Đóng</button>
+            </div>
+        </div>
+    </div>
 
-    </section>
-    <footer class="footer">
-
-    </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -92,6 +199,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+    <!-- DatePicker -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        $("#selector").flatpickr();
+    </script>
     <!-- MAIN JS -->
     <script src="./js/main.js"></script>
 </body>
