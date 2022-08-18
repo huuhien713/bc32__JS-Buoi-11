@@ -126,8 +126,8 @@ inputValue[2].onblur = () => {
 };
 // validate giá trị Email
 function validateEmail(value) {
-    let validate = /^[a-zA-Z0-9_]+@[a-zA-Z0-9_]+(.[a-zA-Z]{2,})+$/;
-    if (validate.test(value) && value != "") {
+    let validate = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (validate.test(value)) {
         inputGroup[3].classList.add('mb-3')
         error[2].innerHTML = '';
         return true;
